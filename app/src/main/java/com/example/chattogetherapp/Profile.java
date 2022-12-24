@@ -114,13 +114,13 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
                 double progress = 100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount();
-                progressDialog.setMessage("Uploaded" + (int) progress +"%");
+                progressDialog.setMessage("Uploaded " + (int) progress +"%");
             }
         });
     }
 
     private void updateProfileImage(String Url){
-        FirebaseDatabase.getInstance().getReference("user/"+FirebaseAuth.getInstance().getCurrentUser().getUid()+"/profile_image").setValue(Url);
+        FirebaseDatabase.getInstance().getReference("user/"+ FirebaseAuth.getInstance().getCurrentUser().getUid()+"/profilePicture").setValue(Url);
     }
 
 }
